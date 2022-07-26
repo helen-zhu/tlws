@@ -18,6 +18,8 @@ class RequestHandler(BaseHTTPRequestHandler):
 
     def _set_headers(self, content):
         self.send_response(200)
+        # can specify another header to specify encoding
+        # legacy code from websites of another language
         self.send_header('Content-type', 'text/html')
         self.send_header("Content-Length", str(len(content)))
         self.end_headers()
